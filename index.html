@@ -146,94 +146,96 @@
 </section>
 
 
-    <!-- Projects -->
-    <section id="projects" class="fade-in">
-      <h3 class="text-3xl font-semibold mb-10 border-b-2 border-indigo-600 inline-block pb-2">Projects</h3>
-      <div class="grid gap-12 md:grid-cols-2">
+   <section id="projects" class="py-20 fade-in">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-bold text-indigo-700 mb-12 border-b-4 border-indigo-500 inline-block pb-2">Projects</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
 
-        <!-- Project Template -->
-        <article class="project-card bg-white p-8 shadow-lg hover:shadow-indigo-300 cursor-pointer" tabindex="0" aria-label="Coating Production Output Monitoring System">
-          <h4 class="text-2xl font-bold mb-3 text-indigo-700">Coating Production Output Monitoring System</h4>
-          <p class="mb-4 text-gray-700">Tracks employee outputs per shift and computes incentives automatically.</p>
-          <ul class="list-disc list-inside text-gray-600 mb-4 space-y-1">
-            <li>Records employee output piece and rate</li>
-            <li>Computes employee output piece rate incentive</li>
-            <li>Provides reports of every shift target output</li>
-            <li>Management of users for the system</li>
-          </ul>
-          <div class="flex flex-wrap gap-4 mb-4">
-            <img onclick="openModal(this)" src="coating1.png" alt="Coating system screenshot 1" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition transform" />
-            <img onclick="openModal(this)" src="coating2.png" alt="Coating system screenshot 2" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition transform" />
-            <img onclick="openModal(this)" src="coating3.png" alt="Coating system screenshot 3" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition transform" />
-            <img onclick="openModal(this)" src="coating4.png" alt="Coating system screenshot 4" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition transform" />
-            <img onclick="openModal(this)" src="coating5.png" alt="Coating system screenshot 5" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition transform" />
-          </div>
-          <p class="text-sm text-gray-500 italic mb-1">La Rose Noire Inc, Philippines | 2023–2024</p>
-          <p class="text-sm text-gray-500">Tech Stack: PHP, JS, HTML, CSS, MySQL, Apache</p>
-        </article>
+      <!-- Project 1 -->
+      <article role="article" class="bg-white rounded-2xl shadow-xl p-8 transition duration-300 hover:shadow-indigo-400 cursor-pointer" tabindex="0" aria-label="Coating Production Output Monitoring System">
+        <h3 class="text-2xl font-bold text-indigo-700 mb-3">Coating Production Output Monitoring System</h3>
+        <p class="text-gray-700 mb-4">Tracks employee outputs per shift and computes incentives automatically.</p>
+        <ul class="list-disc list-inside text-gray-600 space-y-1 mb-4">
+          <li>Tracks employee output and rate</li>
+          <li>Calculates incentive based on performance</li>
+          <li>Generates shift-based production reports</li>
+          <li>Includes user access management</li>
+        </ul>
+        <div class="flex flex-wrap gap-4 mb-4">
+          <img onclick="openModal(this)" src="coating1.png" alt="Coating system interface 1" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition-transform" />
+          <img onclick="openModal(this)" src="coating2.png" alt="Coating system interface 2" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition-transform" />
+          <img onclick="openModal(this)" src="coating3.png" alt="Coating system interface 3" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition-transform" />
+          <img onclick="openModal(this)" src="coating4.png" alt="Coating system interface 4" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition-transform" />
+          <img onclick="openModal(this)" src="coating5.png" alt="Coating system interface 5" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition-transform" />
+        </div>
+        <p class="text-sm text-gray-500 italic mb-1">La Rose Noire Inc, Philippines | 2023–2024</p>
+        <p class="text-sm text-gray-500">Tech Stack: PHP, JS, HTML, CSS, MySQL, Apache</p>
+      </article>
 
-        <article class="project-card bg-white p-8 shadow-lg hover:shadow-indigo-300 cursor-pointer" tabindex="0" aria-label="HR Touchpoint">
-          <h4 class="text-2xl font-bold mb-3 text-indigo-700">HR Touchpoint</h4>
-          <p class="mb-4 text-gray-700">Manages employee 201 files, violations, approvals, and signature workflows.</p>
-          <ul class="list-disc list-inside text-gray-600 mb-4 space-y-1">
-            <li>Records every employee data</li>
-            <li>Update function for every movement of employee's data</li>
-            <li>Uploading of master list through CSV</li>
-          </ul>
-          <div class="flex flex-wrap gap-4 mb-4">
-            <img onclick="openModal(this)" src="touchpoint1.png" alt="HR Touchpoint screenshot 1" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition transform" />
-            <img onclick="openModal(this)" src="touchpoint2.png" alt="HR Touchpoint screenshot 2" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition transform" />
-            <img onclick="openModal(this)" src="touchpoint3.png" alt="HR Touchpoint screenshot 3" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition transform" />
-          </div>
-          <p class="text-sm text-gray-500 italic mb-1">La Rose Noire Inc, Philippines | 2024–2025</p>
-          <p class="text-sm text-gray-500">Tech Stack: PHP, JS, HTML, CSS, MSSQL, IIS</p>
-        </article>
+      <!-- Project 2 -->
+      <article role="article" class="bg-white rounded-2xl shadow-xl p-8 transition duration-300 hover:shadow-indigo-400 cursor-pointer" tabindex="0" aria-label="HR Touchpoint">
+        <h3 class="text-2xl font-bold text-indigo-700 mb-3">HR Touchpoint</h3>
+        <p class="text-gray-700 mb-4">Manages employee 201 files, violations, approvals, and signature workflows.</p>
+        <ul class="list-disc list-inside text-gray-600 space-y-1 mb-4">
+          <li>Stores complete employee records</li>
+          <li>Tracks updates to employee profiles</li>
+          <li>Supports master list upload via CSV</li>
+        </ul>
+        <div class="flex flex-wrap gap-4 mb-4">
+          <img onclick="openModal(this)" src="touchpoint1.png" alt="HR Touchpoint interface 1" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition-transform" />
+          <img onclick="openModal(this)" src="touchpoint2.png" alt="HR Touchpoint interface 2" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition-transform" />
+          <img onclick="openModal(this)" src="touchpoint3.png" alt="HR Touchpoint interface 3" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition-transform" />
+        </div>
+        <p class="text-sm text-gray-500 italic mb-1">La Rose Noire Inc, Philippines | 2024–2025</p>
+        <p class="text-sm text-gray-500">Tech Stack: PHP, JS, HTML, CSS, MSSQL, IIS</p>
+      </article>
 
-        <article class="project-card bg-white p-8 shadow-lg hover:shadow-indigo-300 cursor-pointer" tabindex="0" aria-label="Incident Violation Monitoring System">
-          <h4 class="text-2xl font-bold mb-3 text-indigo-700">Incident/Violation Monitoring System</h4>
-          <p class="mb-4 text-gray-700">Integrated with HR Touchpoint for tracking violations and generating formal reports.</p>
-          <ul class="list-disc list-inside text-gray-600 mb-4 space-y-1">
-            <li>Tag employee with violations</li>
-            <li>Process violation by HR access</li>
-            <li>Approvals of Incidents by Executives</li>
-            <li>Attachment of files</li>
-            <li>Usage of e-signature with NDA</li>
-          </ul>
-          <div class="flex flex-wrap gap-4 mb-4">
-            <img onclick="openModal(this)" src="ivms1.png" alt="IVMS screenshot 1" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition transform" />
-            <img onclick="openModal(this)" src="ivms2.png" alt="IVMS screenshot 2" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition transform" />
-            <img onclick="openModal(this)" src="ivms3.png" alt="IVMS screenshot 3" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition transform" />
-            <img onclick="openModal(this)" src="ivms4.png" alt="IVMS screenshot 4" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition transform" />
-            <img onclick="openModal(this)" src="ivms5.png" alt="IVMS screenshot 5" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition transform" />
-          </div>
-          <p class="text-sm text-gray-500 italic mb-1">La Rose Noire Inc, Philippines | 2025</p>
-          <p class="text-sm text-gray-500">Tech Stack: PHP, JS, HTML, CSS, MSSQL, IIS</p>
-        </article>
+      <!-- Project 3 -->
+      <article role="article" class="bg-white rounded-2xl shadow-xl p-8 transition duration-300 hover:shadow-indigo-400 cursor-pointer" tabindex="0" aria-label="Incident Violation Monitoring System">
+        <h3 class="text-2xl font-bold text-indigo-700 mb-3">Incident/Violation Monitoring System</h3>
+        <p class="text-gray-700 mb-4">Integrated with HR Touchpoint for tracking violations and generating formal reports.</p>
+        <ul class="list-disc list-inside text-gray-600 space-y-1 mb-4">
+          <li>Tags employees with violations</li>
+          <li>Allows HR to process incident reports</li>
+          <li>Includes executive approval workflow</li>
+          <li>Supports file attachments</li>
+          <li>Uses e-signature with NDA integration</li>
+        </ul>
+        <div class="flex flex-wrap gap-4 mb-4">
+          <img onclick="openModal(this)" src="ivms1.png" alt="IVMS interface 1" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition-transform" />
+          <img onclick="openModal(this)" src="ivms2.png" alt="IVMS interface 2" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition-transform" />
+          <img onclick="openModal(this)" src="ivms3.png" alt="IVMS interface 3" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition-transform" />
+          <img onclick="openModal(this)" src="ivms4.png" alt="IVMS interface 4" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition-transform" />
+          <img onclick="openModal(this)" src="ivms5.png" alt="IVMS interface 5" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition-transform" />
+        </div>
+        <p class="text-sm text-gray-500 italic mb-1">La Rose Noire Inc, Philippines | 2025</p>
+        <p class="text-sm text-gray-500">Tech Stack: PHP, JS, HTML, CSS, MSSQL, IIS</p>
+      </article>
 
-        <article class="project-card bg-white p-8 shadow-lg hover:shadow-indigo-300 cursor-pointer" tabindex="0" aria-label="Genesis Pastry Production System">
-          <h4 class="text-2xl font-bold mb-3 text-indigo-700">
-            Genesis (Production System) 
-            <span class="text-yellow-500 font-semibold">(Ongoing)</span>
-          </h4>
-          <p class="mb-4 text-gray-700">Tracks pastry production from ingredients to packaging, including inventory monitoring.</p>
-          <ul class="list-disc list-inside text-gray-600 mb-4 space-y-1">
-            <li>Uploading of Production Inventory from warehouse</li>
-            <li>Uploading of Order and Plan</li>
-            <li>Process of preparing Ingredients of Order</li>
-          </ul>
-          <div class="flex flex-wrap gap-4 mb-4">
-            <img onclick="openModal(this)" src="genesis1.png" alt="Genesis screenshot 1" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition transform" />
-            <img onclick="openModal(this)" src="genesis2.png" alt="Genesis screenshot 2" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition transform" />
-            <img onclick="openModal(this)" src="genesis3.png" alt="Genesis screenshot 3" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition transform" />
-            <img onclick="openModal(this)" src="genesis4.png" alt="Genesis screenshot 4" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition transform" />
-            <img onclick="openModal(this)" src="genesis5.png" alt="Genesis screenshot 5" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition transform" />
-          </div>
-          <p class="text-sm text-gray-500 italic mb-1">La Rose Noire Inc, Philippines | 2025–2026</p>
-          <p class="text-sm text-gray-500">Tech Stack: PHP, JS, HTML, CSS, MSSQL, IIS</p>
-        </article>
+      <!-- Project 4 -->
+      <article role="article" class="bg-white rounded-2xl shadow-xl p-8 transition duration-300 hover:shadow-indigo-400 cursor-pointer" tabindex="0" aria-label="Genesis Pastry Production System">
+        <h3 class="text-2xl font-bold text-indigo-700 mb-3">Genesis (Pastry Production System) <span class="text-yellow-500 font-semibold">(Ongoing)</span></h3>
+        <p class="text-gray-700 mb-4">Tracks pastry production from ingredients to packaging, including inventory monitoring.</p>
+        <ul class="list-disc list-inside text-gray-600 space-y-1 mb-4">
+          <li>Imports production inventory from warehouse</li>
+          <li>Uploads orders and production plans</li>
+          <li>Manages ingredient preparation workflow</li>
+        </ul>
+        <div class="flex flex-wrap gap-4 mb-4">
+          <img onclick="openModal(this)" src="genesis1.png" alt="Genesis Pastry System interface 1" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition-transform" />
+          <img onclick="openModal(this)" src="genesis2.png" alt="Genesis Pastry System interface 2" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition-transform" />
+          <img onclick="openModal(this)" src="genesis3.png" alt="Genesis Pastry System interface 3" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition-transform" />
+          <img onclick="openModal(this)" src="genesis4.png" alt="Genesis Pastry System interface 4" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition-transform" />
+          <img onclick="openModal(this)" src="genesis5.png" alt="Genesis Pastry System interface 5" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition-transform" />
+        </div>
+        <p class="text-sm text-gray-500 italic mb-1">La Rose Noire Inc, Philippines | 2025–2026</p>
+        <p class="text-sm text-gray-500">Tech Stack: PHP, JS, HTML, CSS, MSSQL, IIS</p>
+      </article>
 
-      </div>
-    </section><!-- Projects (unchanged content) -->
+    </div>
+  </div>
+</section>
+<!-- Projects (unchanged content) -->
     <!-- Paste your existing projects section here -->
     <!-- I skipped it here due to length but the project HTML blocks are compatible with this new design -->
 
