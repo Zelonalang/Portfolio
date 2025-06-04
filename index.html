@@ -1,119 +1,265 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ranzel Angelo Laroya | Full-Stack Developer</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    body { font-family: 'Inter', sans-serif; }
-    .tag { background-color: #3b82f6; color: white; padding: 0.4rem 1rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 500; }
-    .project-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-    .project-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f9fafb;
+    }
+    .tag {
+      background: linear-gradient(90deg, #4f46e5, #6366f1);
+      color: white;
+      font-weight: 600;
+      padding: 0.35rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.9rem;
+      user-select: none;
+      transition: background 0.3s ease;
+      cursor: default;
+    }
+    .tag:hover {
+      background: linear-gradient(90deg, #6366f1, #4f46e5);
+    }
+    .project-card {
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: default;
+      border-radius: 0.75rem;
+    }
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 35px rgba(99, 102, 241, 0.3);
+      cursor: pointer;
+    }
+    /* Fade-in on scroll */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Modal styles */
+    #imageModal {
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(6px);
+      z-index: 9999;
+    }
   </style>
 </head>
-<body class="bg-gray-100 text-gray-900">
-  <header class="bg-white shadow-md sticky top-0 z-50 py-6">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-4xl font-bold text-gray-800">Ranzel Angelo Laroya</h2>
-      <p class="text-lg text-gray-500">Full-Stack Web Developer<br>
-        Email: <a href="mailto:itranzel@email.com" class="text-blue-600">itranzel@email.com</a>
-      </p>
-        
+<body class="text-gray-900">
+
+  <!-- Sticky header -->
+  <header class="fixed top-0 w-full bg-white shadow-md z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <h1 class="text-3xl font-extrabold text-indigo-600 select-none">Ranzel Angelo Laroya</h1>
+      <nav class="hidden md:flex space-x-8 font-semibold text-gray-700">
+        <a href="#about" class="hover:text-indigo-600 transition">About</a>
+        <a href="#skills" class="hover:text-indigo-600 transition">Skills</a>
+        <a href="#projects" class="hover:text-indigo-600 transition">Projects</a>
+        <a href="mailto:itranzel@email.com" class="hover:text-indigo-600 transition">Contact</a>
+      </nav>
+      <button id="mobileMenuBtn" class="md:hidden text-indigo-600 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
     </div>
+    <!-- Mobile Menu -->
+    <nav id="mobileMenu" class="hidden bg-white border-t border-gray-200 px-6 py-4 md:hidden">
+      <a href="#about" class="block py-2 font-semibold text-gray-700 hover:text-indigo-600 transition">About</a>
+      <a href="#skills" class="block py-2 font-semibold text-gray-700 hover:text-indigo-600 transition">Skills</a>
+      <a href="#projects" class="block py-2 font-semibold text-gray-700 hover:text-indigo-600 transition">Projects</a>
+      <a href="mailto:itranzel@email.com" class="block py-2 font-semibold text-gray-700 hover:text-indigo-600 transition">Contact</a>
+    </nav>
   </header>
 
-  <main class="py-12">
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-      <h2 class="text-3xl font-semibold mb-6 border-b border-gray-300 inline-block pb-2">About Me</h2>
-      <p class="text-gray-700 text-lg leading-relaxed max-w-3xl">I am a full-stack web developer with a strong focus on backend technologies. I am passionate about leveraging the latest updates and innovations—particularly in PHP development—to create efficient, scalable, and user-friendly systems. My approach emphasizes continuous improvement, performance optimization, and practical solutions to business challenges.</p>
+  <main class="pt-24 max-w-7xl mx-auto px-6 sm:px-10">
+
+    <!-- Hero -->
+    <section class="text-center max-w-3xl mx-auto mb-16 fade-in" id="hero">
+      <h2 class="text-5xl font-extrabold leading-tight text-indigo-600 mb-4">Full-Stack Web Developer</h2>
+      <p class="text-lg text-gray-700 leading-relaxed">I build scalable, efficient web apps focusing on PHP backend development and modern frontend practices.</p>
+      <a href="#projects" class="inline-block mt-8 px-8 py-3 bg-indigo-600 text-white rounded-full font-semibold hover:bg-indigo-700 transition">View My Projects</a>
     </section>
 
-    <section class="bg-white py-12 rounded-xl shadow-md mx-4 sm:mx-6 lg:mx-8 mb-12">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-semibold mb-6 border-b border-gray-300 inline-block pb-2">Skills</h2>
-        <p class="text-gray-700 text-base mb-4">Technologies and platforms I use to build, deploy, and maintain full-stack applications:</p>
-        <div class="flex flex-wrap gap-3 mt-4">
-          <span class="tag">PHP</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">HTML</span>
-          <span class="tag">CSS</span>
-          <span class="tag">MySQL</span>
-          <span class="tag">MSSQL</span>
-          <span class="tag">IIS</span>
-        </div>
+    <!-- About Me -->
+    <section id="about" class="bg-white rounded-2xl shadow-lg p-10 mb-20 fade-in">
+      <h3 class="text-3xl font-semibold mb-6 border-b-2 border-indigo-600 inline-block pb-2">About Me</h3>
+      <p class="text-gray-700 leading-relaxed max-w-4xl mx-auto">
+        Hello! I’m Ranzel Angelo Laroya, a passionate full-stack web developer with a knack for building backend systems that perform. I specialize in PHP development and enjoy integrating the latest technologies and frameworks to deliver reliable and user-friendly web solutions.
+        <br /><br />
+        Whether it's designing scalable databases, optimizing server performance, or crafting intuitive user interfaces, I bring a practical and innovative approach to every project I tackle.
+      </p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="mb-20 fade-in">
+      <h3 class="text-3xl font-semibold mb-8 border-b-2 border-indigo-600 inline-block pb-2">Skills & Technologies</h3>
+      <div class="flex flex-wrap gap-4 justify-center max-w-4xl mx-auto">
+        <span class="tag">PHP</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">MySQL</span>
+        <span class="tag">MSSQL</span>
+        <span class="tag">IIS</span>
+        <span class="tag">Apache</span>
+        <span class="tag">Git</span>
       </div>
     </section>
 
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-      <h2 class="text-3xl font-semibold mb-6 border-b border-gray-300 inline-block pb-2">Projects</h2>
+    <!-- Projects -->
+    <section id="projects" class="fade-in">
+      <h3 class="text-3xl font-semibold mb-10 border-b-2 border-indigo-600 inline-block pb-2">Projects</h3>
+      <div class="grid gap-12 md:grid-cols-2">
 
-      <!-- Sample Project Card Template -->
-      <div class="grid md:grid-cols-2 gap-8">
-
-        <div class="project-card bg-white p-6 rounded-xl shadow">
-          <h3 class="text-xl font-bold">Coating Production Output Monitoring System</h3>
-          <p class="mt-2 text-gray-700">Tracks employee outputs per shift and computes incentives automatically.</p>
-          <div class="mt-4 flex flex-wrap gap-4">
-            <img src="coating1.png" alt="Coating 1" class="w-40 rounded-md shadow-md" />
-            <img src="coating2.png" alt="Coating 2" class="w-40 rounded-md shadow-md" />
-            <img src="coating3.png" alt="Coating 3" class="w-40 rounded-md shadow-md" />
-            <img src="coating4.png" alt="Coating 4" class="w-40 rounded-md shadow-md" />
-            <img src="coating5.png" alt="Coating 5" class="w-40 rounded-md shadow-md" />
+        <!-- Project Template -->
+        <article class="project-card bg-white p-8 shadow-lg hover:shadow-indigo-300 cursor-pointer" tabindex="0" aria-label="Coating Production Output Monitoring System">
+          <h4 class="text-2xl font-bold mb-3 text-indigo-700">Coating Production Output Monitoring System</h4>
+          <p class="mb-4 text-gray-700">Tracks employee outputs per shift and computes incentives automatically.</p>
+          <ul class="list-disc list-inside text-gray-600 mb-4 space-y-1">
+            <li>Records employee output piece and rate</li>
+            <li>Computes employee output piece rate incentive</li>
+            <li>Provides reports of every shift target output</li>
+            <li>Management of users for the system</li>
+          </ul>
+          <div class="flex flex-wrap gap-4 mb-4">
+            <img onclick="openModal(this)" src="coating1.png" alt="Coating system screenshot 1" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition transform" />
+            <img onclick="openModal(this)" src="coating2.png" alt="Coating system screenshot 2" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition transform" />
+            <img onclick="openModal(this)" src="coating3.png" alt="Coating system screenshot 3" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition transform" />
+            <img onclick="openModal(this)" src="coating4.png" alt="Coating system screenshot 4" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition transform" />
+            <img onclick="openModal(this)" src="coating5.png" alt="Coating system screenshot 5" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition transform" />
           </div>
-          <p class="mt-4 text-sm text-gray-500">La Rose Noire Inc, Philippines | 2023–2024</p>
+          <p class="text-sm text-gray-500 italic mb-1">La Rose Noire Inc, Philippines | 2023–2024</p>
           <p class="text-sm text-gray-500">Tech Stack: PHP, JS, HTML, CSS, MySQL, Apache</p>
-        </div>
+        </article>
 
-        <div class="project-card bg-white p-6 rounded-xl shadow">
-          <h3 class="text-xl font-bold">HR Touchpoint</h3>
-          <p class="mt-2 text-gray-700">Manages employee 201 files, violations, approvals, and signature workflows.</p>
-          <div class="mt-4 flex flex-wrap gap-4">
-            <img src="touchpoint1.png" alt="HR Touchpoint 1" class="w-40 rounded-md shadow-md" />
-            <img src="touchpoint2.png" alt="HR Touchpoint 2" class="w-40 rounded-md shadow-md" />
-             <img src="touchpoint3.png" alt="HR Touchpoint 3" class="w-40 rounded-md shadow-md" />
+        <article class="project-card bg-white p-8 shadow-lg hover:shadow-indigo-300 cursor-pointer" tabindex="0" aria-label="HR Touchpoint">
+          <h4 class="text-2xl font-bold mb-3 text-indigo-700">HR Touchpoint</h4>
+          <p class="mb-4 text-gray-700">Manages employee 201 files, violations, approvals, and signature workflows.</p>
+          <ul class="list-disc list-inside text-gray-600 mb-4 space-y-1">
+            <li>Records every employee data</li>
+            <li>Update function for every movement of employee's data</li>
+            <li>Uploading of master list through CSV</li>
+          </ul>
+          <div class="flex flex-wrap gap-4 mb-4">
+            <img onclick="openModal(this)" src="touchpoint1.png" alt="HR Touchpoint screenshot 1" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition transform" />
+            <img onclick="openModal(this)" src="touchpoint2.png" alt="HR Touchpoint screenshot 2" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition transform" />
+            <img onclick="openModal(this)" src="touchpoint3.png" alt="HR Touchpoint screenshot 3" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition transform" />
           </div>
-          <p class="mt-4 text-sm text-gray-500">La Rose Noire Inc, Philippines | 2024–2025</p>
+          <p class="text-sm text-gray-500 italic mb-1">La Rose Noire Inc, Philippines | 2024–2025</p>
           <p class="text-sm text-gray-500">Tech Stack: PHP, JS, HTML, CSS, MSSQL, IIS</p>
-        </div>
+        </article>
 
-        <div class="project-card bg-white p-6 rounded-xl shadow">
-          <h3 class="text-xl font-bold">Incident/Violation Monitoring System</h3>
-          <p class="mt-2 text-gray-700">Integrated with HR Touchpoint for tracking violations and generating formal reports.</p>
-          <div class="mt-4 flex flex-wrap gap-4">
-            <img src="ivms1.png" alt="IVMS 1" class="w-40 rounded-md shadow-md" />
-            <img src="ivms2.png" alt="IVMS 2" class="w-40 rounded-md shadow-md" />
-             <img src="ivms3.png" alt="IVMS 3" class="w-40 rounded-md shadow-md" />
-            <img src="ivms4.png" alt="IVMS 4" class="w-40 rounded-md shadow-md" />
-             <img src="ivms5.png" alt="IVMS 5" class="w-40 rounded-md shadow-md" />
-           
+        <article class="project-card bg-white p-8 shadow-lg hover:shadow-indigo-300 cursor-pointer" tabindex="0" aria-label="Incident Violation Monitoring System">
+          <h4 class="text-2xl font-bold mb-3 text-indigo-700">Incident/Violation Monitoring System</h4>
+          <p class="mb-4 text-gray-700">Integrated with HR Touchpoint for tracking violations and generating formal reports.</p>
+          <ul class="list-disc list-inside text-gray-600 mb-4 space-y-1">
+            <li>Tag employee with violations</li>
+            <li>Process violation by HR access</li>
+            <li>Approvals of Incidents by Executives</li>
+            <li>Attachment of files</li>
+            <li>Usage of e-signature with NDA</li>
+          </ul>
+          <div class="flex flex-wrap gap-4 mb-4">
+            <img onclick="openModal(this)" src="ivms1.png" alt="IVMS screenshot 1" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition transform" />
+            <img onclick="openModal(this)" src="ivms2.png" alt="IVMS screenshot 2" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition transform" />
+            <img onclick="openModal(this)" src="ivms3.png" alt="IVMS screenshot 3" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition transform" />
+            <img onclick="openModal(this)" src="ivms4.png" alt="IVMS screenshot 4" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition transform" />
+            <img onclick="openModal(this)" src="ivms5.png" alt="IVMS screenshot 5" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition transform" />
           </div>
-          <p class="mt-4 text-sm text-gray-500">La Rose Noire Inc, Philippines | 2025</p>
+          <p class="text-sm text-gray-500 italic mb-1">La Rose Noire Inc, Philippines | 2025</p>
           <p class="text-sm text-gray-500">Tech Stack: PHP, JS, HTML, CSS, MSSQL, IIS</p>
-        </div>
+        </article>
 
-        <div class="project-card bg-white p-6 rounded-xl shadow">
-          <h3 class="text-xl font-bold">Genesis (Pastry Production System) <span class="text-yellow-600">(Ongoing)</span></h3>
-          <p class="mt-2 text-gray-700">Tracks pastry production from ingredients to packaging, including inventory monitoring.</p>
-          <div class="mt-4 flex flex-wrap gap-4">
-            <img src="genesis1.png" alt="Genesis 1" class="w-40 rounded-md shadow-md" />
-            <img src="genesis2.png" alt="Genesis 2" class="w-40 rounded-md shadow-md" />
-            <img src="genesis3.png" alt="Genesis 3" class="w-40 rounded-md shadow-md" />
-            <img src="genesis4.png" alt="Genesis 4" class="w-40 rounded-md shadow-md" />
-            <img src="genesis5.png" alt="Genesis 5" class="w-40 rounded-md shadow-md" />
-           
+        <article class="project-card bg-white p-8 shadow-lg hover:shadow-indigo-300 cursor-pointer" tabindex="0" aria-label="Genesis Pastry Production System">
+          <h4 class="text-2xl font-bold mb-3 text-indigo-700">
+            Genesis (Pastry Production System) 
+            <span class="text-yellow-500 font-semibold">(Ongoing)</span>
+          </h4>
+          <p class="mb-4 text-gray-700">Tracks pastry production from ingredients to packaging, including inventory monitoring.</p>
+          <ul class="list-disc list-inside text-gray-600 mb-4 space-y-1">
+            <li>Uploading of Production Inventory from warehouse</li>
+            <li>Uploading of Order and Plan</li>
+            <li>Process of preparing Ingredients of Order</li>
+          </ul>
+          <div class="flex flex-wrap gap-4 mb-4">
+            <img onclick="openModal(this)" src="genesis1.png" alt="Genesis screenshot 1" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition transform" />
+            <img onclick="openModal(this)" src="genesis2.png" alt="Genesis screenshot 2" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition transform" />
+            <img onclick="openModal(this)" src="genesis3.png" alt="Genesis screenshot 3" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition transform" />
+            <img onclick="openModal(this)" src="genesis4.png" alt="Genesis screenshot 4" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition transform" />
+            <img onclick="openModal(this)" src="genesis5.png" alt="Genesis screenshot 5" class="rounded-lg shadow-md w-36 cursor-pointer hover:scale-105 transition transform" />
           </div>
-          <p class="mt-4 text-sm text-gray-500">La Rose Noire Inc, Philippines | 2025–2026</p>
+          <p class="text-sm text-gray-500 italic mb-1">La Rose Noire Inc, Philippines | 2025–2026</p>
           <p class="text-sm text-gray-500">Tech Stack: PHP, JS, HTML, CSS, MSSQL, IIS</p>
-        </div>
+        </article>
 
       </div>
     </section>
+
   </main>
 
-  <footer class="bg-white border-t border-gray-300 text-center text-sm text-gray-600 py-6 mt-12">
+  <!-- Footer -->
+  <footer class="bg-white mt-20 py-10 border-t border-gray-200 text-center text-gray-600 text-sm select-none">
     &copy; 2025 Ranzel Angelo Laroya. All rights reserved.
   </footer>
+
+  <!-- Image Modal -->
+  <div id="imageModal" class="fixed inset-0 flex items-center justify-center hidden" aria-modal="true" role="dialog" tabindex="-1">
+    <div class="relative max-w-5xl mx-4">
+      <button onclick="closeModal()" aria-label="Close image preview" class="absolute top-0 right-0 text-white text-4xl font-bold p-2 hover:text-indigo-400 transition focus:outline-none">&times;</button>
+      <img id="modalImage" class="rounded-xl shadow-xl max-h-[90vh] mx-auto" src="" alt="Project preview image" />
+    </div>
+  </div>
+
+  <script>
+    // Modal open and close
+    function openModal(img) {
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImage');
+      modalImg.src = img.src;
+      modal.classList.remove('hidden');
+      modal.focus();
+    }
+    function closeModal() {
+      const modal = document.getElementById('imageModal');
+      modal.classList.add('hidden');
+      document.activeElement.blur();
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === "Escape") {
+        closeModal();
+      }
+    });
+
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Scroll fade-in animations
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -100px 0px" };
+    const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        appearOnScroll.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+
 </body>
 </html>
